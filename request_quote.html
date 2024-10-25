@@ -208,7 +208,24 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
-  
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      
+      // Trim the textarea content
+      var messageField = document.getElementById("message");
+      messageField.value = messageField.value.trim();
+      
+      // Simulate a form submission to the third-party service
+      setTimeout(function() {
+        // Display success message after submission
+        document.getElementById("successMessage").style.display = "block";
+        
+        // Reset the form fields (if needed)
+        document.getElementById("contactForm").reset();
+      }, 500);
+    });
+  </script>
 </body>
 
 </html>
